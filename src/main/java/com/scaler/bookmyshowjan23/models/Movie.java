@@ -15,10 +15,12 @@ public class Movie extends BaseModel {
     @ManyToMany
     private List<Actor> actors;
 
-    @ManyToMany
+    @Enumerated(EnumType.ORDINAL)
+    @ElementCollection
     private List<Feature> movieFeatures;
 
-    @ManyToMany
+    @Enumerated(EnumType.ORDINAL)
+    @ElementCollection
     private List<Genre> genre;
 
 

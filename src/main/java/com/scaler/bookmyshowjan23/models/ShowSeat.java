@@ -8,7 +8,16 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-//@Table(name = "show_seat_mapping")
+@Table(name = "show_seat_mapping") // Table name should be show_seat_mapping
+/*
+id | show_id | seat_id | status_id
+1      123      A24        1
+
+
+status_id
+1 ---> Booked
+ */
+
 public class ShowSeat extends BaseModel {
     @ManyToOne
     private Show show;
@@ -16,6 +25,10 @@ public class ShowSeat extends BaseModel {
     @ManyToOne
     private Seat seat;
 
-    @ManyToOne
+    @Enumerated(EnumType.ORDINAL)
     private ShowSeatState state;
 }
+/*
+For all the ENUM association there is some issue.
+
+ */

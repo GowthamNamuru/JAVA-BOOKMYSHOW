@@ -18,6 +18,7 @@ public class Auditorium extends BaseModel {
     @OneToMany
     private List<Seat> seats;
 
-    @ManyToMany
+    @ElementCollection
+    @Enumerated(EnumType.ORDINAL)
     private List<Feature> auditoriumFeatures;
 }

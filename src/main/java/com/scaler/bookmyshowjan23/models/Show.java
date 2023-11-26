@@ -19,6 +19,7 @@ public class Show extends BaseModel {
     @ManyToOne
     private Auditorium auditorium;
 
-    @ManyToMany
+    @Enumerated(EnumType.ORDINAL)
+    @ElementCollection
     private List<Feature> showFeatures;
 }
